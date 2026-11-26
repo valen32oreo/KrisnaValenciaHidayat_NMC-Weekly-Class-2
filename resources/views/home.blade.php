@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'EcoBite — Selamatkan Makanan, Hemat Biaya')
+@section('title', 'EcoBite | Selamatkan Makanan, Hemat Biaya')
 
 @section('content')
 @php
@@ -229,7 +229,6 @@
     @endif
     if (new URLSearchParams(window.location.search).get('tambah')) { openModalForm(); }
 
-    // Gulir ke notifikasi supaya kode klaim langsung terlihat
     const notif = document.getElementById('notifikasi');
     if (notif) { notif.scrollIntoView({ behavior: 'smooth', block: 'center' }); }
 
