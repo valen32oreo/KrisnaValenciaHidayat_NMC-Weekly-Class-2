@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\FoodItem;
 use App\Models\User;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Schema;
 
 class DatabaseSeeder extends Seeder
 {
@@ -19,8 +20,10 @@ class DatabaseSeeder extends Seeder
             ['name' => 'Pembeli Demo', 'password' => bcrypt('password')]
         );
 
-        // Hapus data lama agar ter-reset bersih
+        // Nonaktifkan foreign key checks sementara agar truncate tidak error
+        Schema::disableForeignKeyConstraints();
         FoodItem::truncate();
+        Schema::enableForeignKeyConstraints();
 
         $items = [
             [
@@ -62,7 +65,7 @@ class DatabaseSeeder extends Seeder
             [
                 'user_id' => $mitra->id,
                 'title' => 'Ayam Serundeng',
-                'description' => 'Ayam goreng dengan toping serundeng',
+                'description' => 'Ayam goreng dengan toping serundeng kelapa gurih.',
                 'original_price' => 20000,
                 'discounted_price' => 19000,
                 'stock' => 8,
