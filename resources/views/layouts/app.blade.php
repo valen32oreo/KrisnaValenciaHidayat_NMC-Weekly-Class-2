@@ -45,31 +45,36 @@
     <!-- Sticky Glassmorphism Header -->
     <header class="sticky top-0 z-40 w-full border-b border-slate-200 bg-white/90 backdrop-blur-md">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4">
-            <a href="{{ route('home') }}" class="flex items-center gap-2.5">
+            <a href="{{ route('home') }}" class="flex items-center gap-2.5 shrink-0">
                 <img src="{{ asset('images/logo.png') }}" alt="Logo EcoBite" class="h-10 w-10 object-contain">
                 <span class="text-lg font-extrabold tracking-tight text-brand-800">EcoBite</span>
-                <span class="hidden sm:inline text-xs font-semibold text-brand-700 bg-brand-50 border border-brand-200 px-2 py-0.5 rounded-full">Tech for Good</span>
+                <span class="hidden sm:inline text-xs font-semibold text-brand-700 bg-brand-50 border border-brand-200 px-2 py-0.5 rounded-full whitespace-nowrap">Tech for Good</span>
             </a>
 
-            <nav class="hidden md:flex items-center gap-1 text-sm font-semibold ml-auto">
+            <!-- Mode Desktop Menu: Aktif hanya di ukuran lg (1024px+) agar Tablet Portrait pakai Menu Burger -->
+            <nav class="hidden lg:flex items-center gap-1 text-sm font-semibold ml-auto">
                 <a href="{{ route('home') }}" class="px-3 py-2 rounded-lg {{ request()->routeIs('home') ? 'text-brand-700 bg-brand-50' : 'text-slate-600 hover:text-brand-700' }}">Beranda</a>
                 <a href="{{ route('home') }}#cara-kerja" class="px-3 py-2 rounded-lg text-slate-600 hover:text-brand-700">Cara kerja</a>
                 <a href="{{ route('home') }}#katalog" class="px-3 py-2 rounded-lg text-slate-600 hover:text-brand-700">Katalog</a>
                 <a href="{{ route('perancangan') }}" class="px-3 py-2 rounded-lg {{ request()->routeIs('perancangan') ? 'text-brand-700 bg-brand-50' : 'text-slate-600 hover:text-brand-700' }}">Perancangan</a>
             </nav>
 
-            <div class="flex items-center gap-2">
-                <button onclick="openModalForm()" class="inline-flex items-center gap-2 bg-brand-600 hover:bg-brand-700 text-white font-semibold text-sm px-4 py-2 rounded-xl transition active:scale-95">
+            <div class="flex items-center gap-2 shrink-0">
+                <button onclick="openModalForm()" class="inline-flex items-center gap-2 bg-brand-600 hover:bg-brand-700 text-white font-semibold text-sm px-4 py-2 rounded-xl transition active:scale-95 whitespace-nowrap">
                     <i data-lucide="plus" class="w-4 h-4"></i>
                     <span class="hidden sm:inline">Tambah porsi</span><span class="sm:hidden">Tambah</span>
                 </button>
-                <button id="tombolMenu" onclick="toggleMenu()" aria-label="Buka menu" aria-expanded="false" aria-controls="menuMobile" class="md:hidden w-10 h-10 flex items-center justify-center rounded-xl border border-slate-200 text-slate-700 hover:bg-slate-50">
+                
+                <!-- Tombol Menu Burger: Tampil di Mobile & Tablet Portrait (< 1024px) -->
+                <button id="tombolMenu" onclick="toggleMenu()" aria-label="Buka menu" aria-expanded="false" aria-controls="menuMobile" class="lg:hidden w-10 h-10 flex items-center justify-center rounded-xl border border-slate-200 text-slate-700 hover:bg-slate-50">
                     <span id="ikonBuka"><i data-lucide="menu" class="w-5 h-5"></i></span>
                     <span id="ikonTutup" class="hidden"><i data-lucide="x" class="w-5 h-5"></i></span>
                 </button>
             </div>
         </div>
-        <nav id="menuMobile" class="hidden md:hidden border-t border-slate-100 bg-white px-4 py-2 flex flex-col text-sm font-semibold text-slate-700">
+
+        <!-- Dropdown Menu Mobile & Tablet -->
+        <nav id="menuMobile" class="hidden lg:hidden border-t border-slate-100 bg-white px-4 py-2 flex flex-col text-sm font-semibold text-slate-700">
             <a href="{{ route('home') }}" onclick="toggleMenu()" class="px-3 py-3 rounded-lg hover:bg-brand-50 hover:text-brand-700">Beranda</a>
             <a href="{{ route('home') }}#cara-kerja" onclick="toggleMenu()" class="px-3 py-3 rounded-lg hover:bg-brand-50 hover:text-brand-700">Cara kerja</a>
             <a href="{{ route('home') }}#katalog" onclick="toggleMenu()" class="px-3 py-3 rounded-lg hover:bg-brand-50 hover:text-brand-700">Katalog</a>
@@ -82,14 +87,15 @@
         @yield('content')
     </main>
 
-    <!-- Footer -->
-    <footer id="footer" class="border-t border-slate-200 bg-white font-sans">
-        <div class="max-w-7xl mx-auto px-6 py-16">
+    <!-- Footer Responsive (Mobile -> Tablet -> Desktop) -->
+    <footer id="footer" class="mt-20 border-t border-slate-200 bg-white font-sans">
+        <div class="max-w-7xl mx-auto px-6 py-12 md:py-16">
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-6 items-start">
+            <!-- Grid: 1 Kolom (Mobile), 2 Kolom (Tablet Portrait), 4 Kolom (Tablet Landscape/Desktop) -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-12 gap-8 lg:gap-6 items-start">
 
                 <!-- Logo & Deskripsi Utama -->
-                <div class="flex flex-col gap-4 lg:col-span-3">
+                <div class="flex flex-col gap-3 sm:col-span-2 md:col-span-4 lg:col-span-4">
                     <div class="flex items-center gap-3">
                         <img src="{{ asset('images/logo.png') }}" class="w-9 h-9 object-contain" alt="EcoBite Logo">
                         <span class="font-extrabold text-xl tracking-tight text-slate-900">
@@ -99,15 +105,15 @@
                             Tech for Good
                         </span>
                     </div>
-                    <p class="text-slate-500 text-sm leading-relaxed">
+                    <p class="text-slate-500 text-sm leading-relaxed max-w-md">
                         Platform penyelamat makanan surplus dari UMKM kuliner lokal. Berkomitmen mengurangi <em>food waste</em> dan memperluas akses makanan terjangkau bagi masyarakat.
                     </p>
                 </div>
 
                 <!-- Navigasi -->
-                <div class="lg:col-span-2 lg:col-start-5">
-                    <p class="font-semibold mb-4 text-slate-900">Navigasi Utama</p>
-                    <ul class="space-y-3 text-sm text-slate-500">
+                <div class="sm:col-span-1 md:col-span-1 lg:col-span-2 lg:col-start-5">
+                    <p class="font-semibold mb-3 text-slate-900 text-sm">Navigasi Utama</p>
+                    <ul class="space-y-2.5 text-xs sm:text-sm text-slate-500">
                         <li>
                             <a href="{{ route('home') }}" class="hover:text-brand-600 transition">Beranda Utama</a>
                         </li>
@@ -130,9 +136,9 @@
                 </div>
 
                 <!-- Fokus & Dampak -->
-                <div class="lg:col-span-2">
-                    <p class="font-semibold mb-4 text-slate-900">Fokus & Dampak</p>
-                    <ul class="space-y-3 text-sm text-slate-500">
+                <div class="sm:col-span-1 md:col-span-1 lg:col-span-2">
+                    <p class="font-semibold mb-3 text-slate-900 text-sm">Fokus & Dampak</p>
+                    <ul class="space-y-2.5 text-xs sm:text-sm text-slate-500">
                         <li><span class="hover:text-brand-600 transition cursor-default">SDG 12 Konsumsi</span></li>
                         <li><span class="hover:text-brand-600 transition cursor-default">Food Waste Rescue</span></li>
                         <li><span class="hover:text-brand-600 transition cursor-default">Mitra UMKM Kuliner</span></li>
@@ -141,9 +147,9 @@
                 </div>
 
                 <!-- Stack Teknologi -->
-                <div class="lg:col-span-2">
-                    <p class="font-semibold mb-4 text-slate-900">Teknologi</p>
-                    <ul class="space-y-3 text-sm text-slate-500">
+                <div class="sm:col-span-1 md:col-span-1 lg:col-span-2">
+                    <p class="font-semibold mb-3 text-slate-900 text-sm">Teknologi</p>
+                    <ul class="space-y-2.5 text-xs sm:text-sm text-slate-500">
                         <li><span class="hover:text-brand-600 transition cursor-default">Laravel 13 (PHP 8.3)</span></li>
                         <li><span class="hover:text-brand-600 transition cursor-default">Tailwind CSS</span></li>
                         <li><span class="hover:text-brand-600 transition cursor-default">MySQL Database</span></li>
@@ -152,9 +158,9 @@
                 </div>
 
                 <!-- Submission Info -->
-                <div class="lg:col-span-2">
-                    <p class="font-semibold mb-4 text-slate-900">Submission</p>
-                    <ul class="space-y-3 text-sm text-slate-500">
+                <div class="sm:col-span-1 md:col-span-1 lg:col-span-2">
+                    <p class="font-semibold mb-3 text-slate-900 text-sm">Submission</p>
+                    <ul class="space-y-2.5 text-xs sm:text-sm text-slate-500">
                         <li>
                             <span class="font-medium text-slate-700 block">GDGoC Gunadarma</span>
                             <span class="block text-xs text-slate-400 mt-0.5">Weekly Class 2</span>
@@ -173,7 +179,7 @@
             </div>
 
             <!-- Sub-footer / Hak Cipta -->
-            <div class="mt-16 pt-6 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-slate-400">
+            <div class="mt-12 md:mt-16 pt-6 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs sm:text-sm text-slate-400">
                 <p class="text-center sm:text-left">
                     <span>
                         Copyright © {{ date('Y') }} 
@@ -182,7 +188,7 @@
                 </p>
 
                 <div class="flex items-center gap-6">
-                    <a href="{{ route('perancangan') }}" class="text-sm text-slate-400 hover:text-brand-600 font-medium transition-colors underline-offset-4 hover:underline">
+                    <a href="{{ route('perancangan') }}" class="text-xs sm:text-sm text-slate-400 hover:text-brand-600 font-medium transition-colors underline-offset-4 hover:underline">
                         Perancangan Aplikasi
                     </a>
                 </div>
