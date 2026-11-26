@@ -83,15 +83,109 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-white border-t border-slate-200/80 py-8 mt-16">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-500">
-            <div class="flex items-center gap-2">
-                <img src="{{ asset('images/logo.png') }}" alt="EcoBite" class="w-6 h-6 object-contain">
-                <span class="font-semibold text-slate-700">EcoBite App</span> | Solusi Surplus Makanan & Green Tech
+    <footer id="footer" class="border-t border-slate-200 bg-white font-sans">
+        <div class="max-w-7xl mx-auto px-6 py-16">
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-6 items-start">
+
+                <!-- Logo & Deskripsi Utama -->
+                <div class="flex flex-col gap-4 lg:col-span-3">
+                    <div class="flex items-center gap-3">
+                        <img src="{{ asset('images/logo.png') }}" class="w-9 h-9 object-contain" alt="EcoBite Logo">
+                        <span class="font-extrabold text-xl tracking-tight text-slate-900">
+                            EcoBite
+                        </span>
+                        <span class="text-[10px] uppercase font-bold text-brand-700 bg-brand-50 border border-brand-200 px-2 py-0.5 rounded-full">
+                            Tech for Good
+                        </span>
+                    </div>
+                    <p class="text-slate-500 text-sm leading-relaxed">
+                        Platform penyelamat makanan surplus dari UMKM kuliner lokal. Berkomitmen mengurangi <em>food waste</em> dan memperluas akses makanan terjangkau bagi masyarakat.
+                    </p>
+                </div>
+
+                <!-- Navigasi -->
+                <div class="lg:col-span-2 lg:col-start-5">
+                    <p class="font-semibold mb-4 text-slate-900">Navigasi Utama</p>
+                    <ul class="space-y-3 text-sm text-slate-500">
+                        <li>
+                            <a href="{{ route('home') }}" class="hover:text-brand-600 transition">Beranda Utama</a>
+                        </li>
+                        <li>
+                            <a href="{{ request()->routeIs('home') ? '#cara-kerja' : route('home').'#cara-kerja' }}" class="hover:text-brand-600 transition">
+                                Cara Kerja
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ request()->routeIs('home') ? '#katalog' : route('home').'#katalog' }}" class="hover:text-brand-600 transition">
+                                Katalog Porsi
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ route('perancangan') }}" class="hover:text-brand-600 transition font-semibold text-brand-700">
+                                Perancangan Web
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Fokus & Dampak -->
+                <div class="lg:col-span-2">
+                    <p class="font-semibold mb-4 text-slate-900">Fokus & Dampak</p>
+                    <ul class="space-y-3 text-sm text-slate-500">
+                        <li><span class="hover:text-brand-600 transition cursor-default">SDG 12 Konsumsi</span></li>
+                        <li><span class="hover:text-brand-600 transition cursor-default">Food Waste Rescue</span></li>
+                        <li><span class="hover:text-brand-600 transition cursor-default">Mitra UMKM Kuliner</span></li>
+                        <li><span class="hover:text-brand-600 transition cursor-default">Diskon Makanan 50%</span></li>
+                    </ul>
+                </div>
+
+                <!-- Stack Teknologi -->
+                <div class="lg:col-span-2">
+                    <p class="font-semibold mb-4 text-slate-900">Teknologi</p>
+                    <ul class="space-y-3 text-sm text-slate-500">
+                        <li><span class="hover:text-brand-600 transition cursor-default">Laravel 13 (PHP 8.3)</span></li>
+                        <li><span class="hover:text-brand-600 transition cursor-default">Tailwind CSS</span></li>
+                        <li><span class="hover:text-brand-600 transition cursor-default">MySQL Database</span></li>
+                        <li><span class="hover:text-brand-600 transition cursor-default">Lucide Vector Icons</span></li>
+                    </ul>
+                </div>
+
+                <!-- Submission Info -->
+                <div class="lg:col-span-2">
+                    <p class="font-semibold mb-4 text-slate-900">Submission</p>
+                    <ul class="space-y-3 text-sm text-slate-500">
+                        <li>
+                            <span class="font-medium text-slate-700 block">GDGoC Gunadarma</span>
+                            <span class="block text-xs text-slate-400 mt-0.5">Weekly Class 2</span>
+                        </li>
+                        <li>
+                            <span class="font-medium text-slate-700 block">Class Web Developer</span>
+                            <span class="block text-xs text-slate-400 mt-0.5">Task Submission</span>
+                        </li>
+                        <li>
+                            <span class="font-medium text-slate-700 block">Developer</span>
+                            <span class="block text-xs text-slate-400 mt-0.5">Krisna Valencia Hidayat</span>
+                        </li>
+                    </ul>
+                </div>
+
             </div>
-            <div class="flex flex-col sm:flex-row items-center gap-2 sm:gap-5 text-center">
-                <a href="{{ route('perancangan') }}" class="font-semibold text-brand-700 hover:underline">Perancangan Aplikasi</a>
-                <p>&copy; {{ date('Y') }} Krisna Valencia Hidayat. All rights reserved.</p>
+
+            <!-- Sub-footer / Hak Cipta -->
+            <div class="mt-16 pt-6 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-slate-400">
+                <p class="text-center sm:text-left">
+                    <span>
+                        Copyright © {{ date('Y') }} 
+                        <span class="font-bold text-slate-700">EcoBite App</span>. All rights reserved.
+                    </span>
+                </p>
+
+                <div class="flex items-center gap-6">
+                    <a href="{{ route('perancangan') }}" class="text-sm text-slate-400 hover:text-brand-600 font-medium transition-colors underline-offset-4 hover:underline">
+                        Perancangan Aplikasi
+                    </a>
+                </div>
             </div>
         </div>
     </footer>
