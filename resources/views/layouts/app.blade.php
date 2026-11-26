@@ -101,7 +101,7 @@
                         <span class="font-extrabold text-xl tracking-tight text-slate-900">
                             EcoBite
                         </span>
-                        <span class="text-[10px] uppercase font-bold text-brand-700 bg-brand-50 border border-brand-200 px-2 py-0.5 rounded-full">
+                        <span class="text-[10px] font-bold text-brand-700 bg-brand-50 border border-brand-200 px-2 py-0.5 rounded-full">
                             Tech for Good
                         </span>
                     </div>
