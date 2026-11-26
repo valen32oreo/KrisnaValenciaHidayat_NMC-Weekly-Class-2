@@ -98,7 +98,7 @@
                 <div class="flex flex-col gap-3 sm:col-span-2 md:col-span-4 lg:col-span-4">
                     <div class="flex items-center gap-3">
                         <img src="{{ asset('images/logo.png') }}" class="w-9 h-9 object-contain" alt="EcoBite Logo">
-                        <span class="font-extrabold text-xl tracking-tight text-slate-900">
+                        <span class="font-extrabold text-xl tracking-tight text-brand-800">
                             EcoBite
                         </span>
                         <span class="text-[10px] font-bold text-brand-700 bg-brand-50 border border-brand-200 px-2 py-0.5 rounded-full">
