@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Perancangan | EcoBite')
+@section('title', 'EcoBite | Perancangan')
 
 @section('content')
 @php
