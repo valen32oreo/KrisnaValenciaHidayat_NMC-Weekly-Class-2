@@ -183,7 +183,7 @@
                 <p class="text-center sm:text-left">
                     <span>
                         Copyright © {{ date('Y') }} 
-                        <span class="font-bold text-slate-700">EcoBite App</span>. All rights reserved.
+                        <span class="font-bold text-brand-800">EcoBite App</span>. All rights reserved.
                     </span>
                 </p>
 
