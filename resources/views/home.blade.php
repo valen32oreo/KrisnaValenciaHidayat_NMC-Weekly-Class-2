@@ -28,7 +28,7 @@
                 Makanan layak makan dari UMKM sekitar Anda, jangan sampai terbuang.
             </h1>
             <p class="text-brand-100 leading-relaxed max-w-xl">
-                EcoBite menghubungkan UMKM kuliner yang punya makanan sisa di akhir hari dengan pembeli yang mencari harga lebih hemat.
+                <span class="text-brand-800">EcoBite</span> menghubungkan UMKM kuliner yang punya makanan sisa di akhir hari dengan pembeli yang mencari harga lebih hemat.
             </p>
             <div class="flex flex-wrap gap-3 pt-2">
                 <a href="#katalog" class="inline-flex items-center gap-2 bg-white text-brand-800 hover:bg-brand-50 font-bold text-sm px-6 py-3 rounded-xl transition">
@@ -76,7 +76,7 @@
     <!-- Cara kerja -->
     <section id="cara-kerja" class="scroll-mt-24 space-y-6">
         <div class="flex flex-wrap items-end justify-between gap-2">
-            <h2 class="text-2xl font-extrabold text-slate-900 tracking-tight">Cara kerja EcoBite</h2>
+            <h2 class="text-2xl font-extrabold text-slate-900 tracking-tight">Cara kerja <span class="text-brand-800">EcoBite</span></h2>
             <a href="{{ route('perancangan') }}" class="text-sm font-semibold text-brand-700 hover:underline">Lihat perancangan aplikasi</a>
         </div>
         <ol class="grid md:grid-cols-3 gap-8 md:gap-0 md:divide-x divide-slate-200">
