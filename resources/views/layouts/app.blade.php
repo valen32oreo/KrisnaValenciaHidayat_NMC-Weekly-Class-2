@@ -48,7 +48,6 @@
             <a href="{{ route('home') }}" class="flex items-center gap-2.5 shrink-0">
                 <img src="{{ asset('images/logo.png') }}" alt="Logo EcoBite" class="h-10 w-10 object-contain">
                 <span class="text-lg font-extrabold tracking-tight text-brand-800">EcoBite</span>
-                <span class="hidden sm:inline text-xs font-semibold text-brand-700 bg-brand-50 border border-brand-200 px-2 py-0.5 rounded-full whitespace-nowrap">Tech for Good</span>
             </a>
 
             <!-- Mode Desktop Menu: Aktif hanya di ukuran lg (1024px+) agar Tablet Portrait pakai Menu Burger -->
