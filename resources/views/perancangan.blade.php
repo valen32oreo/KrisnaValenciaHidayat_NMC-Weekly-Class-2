@@ -64,7 +64,7 @@
             <i data-lucide="leaf" class="w-3.5 h-3.5"></i>
             <span>Tema: Tech for Good — Solve Social &amp; Green Issues</span>
         </span>
-        <h1 class="text-3xl md:text-4xl font-extrabold tracking-tight text-slate-900">Perancangan EcoBite</h1>
+        <h1 class="text-3xl md:text-4xl font-extrabold tracking-tight text-slate-900">Perancangan <span class="text-brand-800">EcoBite</span></h1>
         <p class="text-slate-600 leading-relaxed">
             Halaman ini menjelaskan bagaimana EcoBite dirancang sebelum dan selama dibuat: masalah yang dipecahkan, alur pengguna, rancangan data, rancangan tampilan, dan tahapan pengerjaannya.
         </p>
