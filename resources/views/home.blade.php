@@ -18,20 +18,18 @@
 @endphp
 
 <!-- Hero -->
-<section class="bg-brand-900 text-white min-h-screen">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16 grid lg:grid-cols-5 gap-10 items-center">
+<section class="bg-brand-900 text-white min-h-[calc(100vh-4rem)] flex flex-col justify-center relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-0 w-full grid lg:grid-cols-5 gap-10 items-center">
+        
         <div class="lg:col-span-3 space-y-5">
-            <p class="inline-flex items-center gap-2 text-sm font-semibold text-brand-200">
-                <i data-lucide="leaf" class="w-4 h-4"></i> Tech for Good · SDG 12 Konsumsi Bertanggung Jawab
-            </p>
             <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight leading-tight">
                 Makanan layak makan dari UMKM sekitar Anda, <span class="text-brand-200 underline decoration-brand-400/40 underline-offset-8">jangan sampai terbuang.</span>
             </h1>
             <p class="text-brand-100 leading-relaxed max-w-xl">
-                EcoBite menghubungkan UMKM kuliner yang punya makanan sisa di akhir hari dengan pembeli yang mencari harga lebih hemat.
+                <strong class="text-white font-bold">EcoBite</strong> menghubungkan UMKM kuliner yang punya makanan sisa di akhir hari dengan pembeli yang mencari harga lebih hemat.
             </p>
             <div class="flex flex-wrap gap-3 pt-2">
-                <a href="#katalog" class="inline-flex items-center gap-2 bg-white text-brand-800 hover:bg-brand-50 font-bold text-sm px-6 py-3 rounded-xl transition">
+                <a href="#katalog" class="inline-flex items-center gap-2 bg-white text-brand-800 hover:bg-brand-50 font-bold text-sm px-6 py-3 rounded-xl transition shadow-md">
                     <i data-lucide="shopping-bag" class="w-4 h-4"></i> Lihat porsi hari ini
                 </a>
                 <button onclick="openModalForm()" class="inline-flex items-center gap-2 border border-white/40 hover:bg-white/10 text-white font-semibold text-sm px-6 py-3 rounded-xl transition">
@@ -54,6 +52,7 @@
                 <dt class="text-xs lg:text-sm text-brand-200 mt-1">lokasi pengambilan</dt>
             </div>
         </dl>
+
     </div>
 </section>
 
