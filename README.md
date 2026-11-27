@@ -32,7 +32,7 @@
 - **Framework:** Laravel 13 (PHP 8.3)
 - **Database:** MySQL
 - **Templating:** Blade
-- **Styling:** Tailwind CSS (CDN)
+- **Styling:** Tailwind CSS
 - **Ikon dan font:** Lucide Icons, Plus Jakarta Sans
 - **Arsitektur:** Model-View-Controller (MVC)
 
