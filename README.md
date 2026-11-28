@@ -1,7 +1,8 @@
 # 🌱 EcoBite | Platform Surplus Makanan UMKM
 
-> **Submission Project Weekly Class 2 | GDGoC Universitas Gunadarma**
-> **Tema:** Tech for Good (Solve Social & Green Issues, SDG 12: Responsible Consumption and Production)
+> 🏅 **Top 6 National Finalist** | National Mini Competition (NMC) Web Development 2026 (GDGoC Universitas Gunadarma)
+> Terpilih dari **1.000+ peserta komunitas nasional** berdasarkan keunggulan arsitektur sistem dan kualitas kode teknis.
+> **Tema:** Tech for Good (SDG 12: Responsible Consumption and Production)
 > **Pembuat:** Krisna Valencia Hidayat
 
 ---
